@@ -1,0 +1,30 @@
+html {
+    background-image:url(salmon.png);
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin-top: 2.7em;
+    margin-left:5.3em;
+    margin-bottom: 3em;
+    text-shadow: .05em .05em .05em white
+}
+
+#sales {
+    margin-left: 1em;
+    margin-right: 1em;
+    columns: 5;
+}
+
+ul {
+    height: 30em;
+}
+
+li {
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 0em;
+    text-indent: 1em;
+}
