@@ -3,6 +3,11 @@ html {
     background-repeat: no-repeat;
 }
 
+nav {
+    float: right;
+    margin-right:3em;
+    margin-top: -2em;
+}
 h1 {
     margin-top: 2.7em;
     margin-left:5.3em;
