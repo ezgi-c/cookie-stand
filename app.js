@@ -104,37 +104,6 @@ console.log(sum2);
 
 
 
-// this.getHourlyTotal = function(){
-//   let hourlyTotal = [];
-//   for (let i=0; i<hours.length; i++) {
-//     for (let j = 0; j < locations.length; j++) {
-//       hourlyTotal[i] += locations[j].cookiesSoldPerHour[i];
-//     }
-//     console.log(hourlyTotal[i]);
-//   }
-// };
-// this.getHourlyTotal();
-
-// console.log(locations[0].cookiesSoldPerHour[0]);
-
-// let hourlyTotal = 0;
-
-// for (let i = 0; i < hours.length; i++) {
-//   for (let j = 0; j < locations.length; j++) {
-//     hourlyTotal += locations[j].hourlySales();
-//   }
-// }
-
-// 6 am total = seattle + tokyo + dubai + paris + lima
-
-// let hourlyTotal = seattle.cookiesSoldPerHour[0];
-// let cookiesSoldPerHour = seattle.cookiesSoldPerHour;
-
-// console.log(hourlyTotal);
-// console.log(seattle.cookiesSoldPerHour[0]);
-
-
-
 
 
 
