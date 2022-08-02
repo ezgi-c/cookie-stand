@@ -18,17 +18,17 @@ nav {
 }
 
 button {
-    background-color: #75357a;
+    background-color:#BB98BC;
     border-radius: .2em;
 }
 
 a {
-    color:#CCC36E;
+    color:#75357a;
     text-decoration: none;
 }
 
 a:hover {
-    color:#CCC36E;
+    color:#2d2c32;
 }
 
 header {
@@ -42,23 +42,38 @@ h1 {
     color: #75357a;
 }
 
-#sales {
-    margin-left: 1em;
-    margin-right: 1em;
-    columns: 5;
+table {
+    margin: auto;
+}
+table, th {
+    background-color: #bb98bc90;
+    border-spacing: 0px;
+    margin: auto;
 }
 
-ul {
-    height: 30em;
+th {
+    color: #75357a;
 }
 
-li {
-    list-style:circle;
+#table-body
+th {
+    border: .5px solid #75357a; 
 }
 
-h2 {
-    margin-top: 1em;
-    margin-bottom: 0em;
-    text-indent: 1em;
-    color: #a54e6b;
+th, td {
+    padding: .5em;
+}
+
+td {
+    border: .5px solid #75357a;
+    padding: .5em;
+    text-align: end;
+}
+
+#table-foot
+th {
+    background-color:#BB98BC;
+    color: #2d2c32;
+    border: .5px solid #75357a;
+    text-align: end;
 }
