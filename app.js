@@ -2,20 +2,28 @@
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-let tableHead = document.getElementById('table-head');
-let tableRow = document.createElement('tr');
-tableHead.appendChild(tableRow);
-let tableHeader0 = document.createElement('th');
-tableHeader0.innerText = '';
-tableRow.appendChild(tableHeader0);
-for (let i=0; i<hours.length; i++) {
-  let tableHeader = document.createElement('th');
-  tableHeader.innerText = hours[i];
-  tableRow.appendChild(tableHeader);
+function createTableHeader () {
+
+  let tableHead = document.getElementById('table-head');
+  let tableRow = document.createElement('tr');
+  tableHead.appendChild(tableRow);
+
+  let tableHeader0 = document.createElement('th');
+  tableHeader0.innerText = '';
+  tableRow.appendChild(tableHeader0);
+
+  for (let i=0; i<hours.length; i++) {
+    let tableHeader = document.createElement('th');
+    tableHeader.innerText = hours[i];
+    tableRow.appendChild(tableHeader);
+  }
+
+  let tableHeader2 = document.createElement('th');
+  tableHeader2.innerText = 'Daily Location Total';
+  tableRow.appendChild(tableHeader2);
 }
-let tableHeader2 = document.createElement('th');
-tableHeader2.innerText = 'Daily Location Total';
-tableRow.appendChild(tableHeader2);
+
+createTableHeader();
 
 function Locations (city, minCust, maxCust, avgSale) {
   this.city = city;
@@ -73,36 +81,37 @@ dubai.render();
 paris.render();
 lima.render();
 
-let tableFoot = document.getElementById('table-foot');
-let tableRow2 = document.createElement('tr');
-let header = document.createElement('th');
-header.innerText = 'Totals';
-tableFoot.appendChild(tableRow2);
-tableRow2.appendChild(header);
+function createTableFooter () {
+  let tableFoot = document.getElementById('table-foot');
+  let tableRow2 = document.createElement('tr');
+  let header = document.createElement('th');
+  header.innerText = 'Totals';
+  tableFoot.appendChild(tableRow2);
+  tableRow2.appendChild(header);
 
-let locations = [seattle, tokyo, dubai, paris, lima];
+  let locations = [seattle, tokyo, dubai, paris, lima];
 
-for (let i=0; i<hours.length; i++) {
-  let sum = 0;
-  for (let j=0; j<locations.length; j++) {
-    sum += locations[j].cookiesSoldPerHour[i];
+  for (let i=0; i<hours.length; i++) {
+    let sum = 0;
+    for (let j=0; j<locations.length; j++) {
+      sum += locations[j].cookiesSoldPerHour[i];
+    }
+    let hourlyTotals = document.createElement('th');
+    hourlyTotals.innerText = sum;
+    tableRow2.appendChild(hourlyTotals);
   }
-  let hourlyTotals = document.createElement('th');
-  hourlyTotals.innerText = sum;
-  tableRow2.appendChild(hourlyTotals);
+
+  let sum2 = 0;
+  for (let i=0; i<locations.length; i++) {
+    sum2 += locations[i].totalCookiesSold;
+  }
+  let dailyTotal = document.createElement('th');
+  dailyTotal.innerText = sum2;
+  tableRow2.appendChild(dailyTotal);
+  console.log(sum2);
 }
 
-let sum2 = 0;
-for (let i=0; i<locations.length; i++) {
-  sum2 += locations[i].totalCookiesSold;
-}
-let dailyTotal = document.createElement('th');
-dailyTotal.innerText = sum2;
-tableRow2.appendChild(dailyTotal);
-console.log(sum2);
-
-
-
+createTableFooter();
 
 
 
