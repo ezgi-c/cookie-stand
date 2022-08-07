@@ -22,6 +22,35 @@
             <tfoot id="table-foot"></tfoot>
         </table>
         </section>
+        <br>
+        <br>
+        <form id="form">
+        <fieldset>
+            <legend>Add a new store:</legend>
+            <br>
+            <label>
+                City:
+                <input type="text" name="city">
+            </label>
+            <br>
+            <label>
+                Minimum number of customers per day:
+                <input type="number" name="minCust" min="0">
+            </label>
+            <br>
+            <label>
+                Maximum number of customers per day:
+                <input type="number" name="maxCust" min="0">
+            </label>
+            <br>
+            <label>
+                Average number of cookies sold per customer:
+                <input type="number" name="avgSale" min="0">
+            </label>
+            <br><br>
+            <input type="submit">
+        </fieldset>
+        </form>    
     </main>
     <footer></footer>
 <script src="app.js"></script>    
