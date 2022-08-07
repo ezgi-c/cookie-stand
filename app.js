@@ -9,7 +9,7 @@ function createTableHeader () {
   tableHead.appendChild(tableRow);
 
   let tableHeader0 = document.createElement('th');
-  tableHeader0.innerText = '';
+  tableHeader0.innerText = 'Cities';
   tableRow.appendChild(tableHeader0);
 
   for (let i=0; i<hours.length; i++) {
@@ -108,11 +108,25 @@ function createTableFooter () {
   let dailyTotal = document.createElement('th');
   dailyTotal.innerText = sum2;
   tableRow2.appendChild(dailyTotal);
-  console.log(sum2);
 }
 
 createTableFooter();
 
+function inputNewStore(){
+  let form = document.getElementById('form');
+  form.addEventListener('submit',addStore);
+  function addStore(event) {
+    event.preventDefault();
+    let form = event.target;
+    let city = form.city.value;
+    let minCust = form.minCust.value;
+    let maxCust = form.maxCust.value;
+    let avgSale = form.avgSale.value;
+    let newStore = new Locations(city, minCust, maxCust, avgSale);
+    console.log(newStore);
+    newStore.render();
+  }
+}
 
-
+inputNewStore();
 
