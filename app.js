@@ -2,7 +2,7 @@
 
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-function createTableHeader () {
+function header () {
 
   let tableHead = document.getElementById('table-head');
   let tableRow = document.createElement('tr');
@@ -23,9 +23,10 @@ function createTableHeader () {
   tableRow.appendChild(tableHeader2);
 }
 
-createTableHeader();
+header();
 
 function Locations (city, minCust, maxCust, avgSale) {
+
   this.city = city;
   this.minCust = minCust;
   this.maxCust = maxCust;
@@ -81,15 +82,19 @@ dubai.render();
 paris.render();
 lima.render();
 
-function createTableFooter () {
+let locations = [seattle, tokyo, dubai, paris, lima];
+
+function footer () {
+
+  // hourly totals across locations
+
   let tableFoot = document.getElementById('table-foot');
+  tableFoot.innerHTML= '';
   let tableRow2 = document.createElement('tr');
   let header = document.createElement('th');
   header.innerText = 'Totals';
   tableFoot.appendChild(tableRow2);
   tableRow2.appendChild(header);
-
-  let locations = [seattle, tokyo, dubai, paris, lima];
 
   for (let i=0; i<hours.length; i++) {
     let sum = 0;
@@ -101,6 +106,8 @@ function createTableFooter () {
     tableRow2.appendChild(hourlyTotals);
   }
 
+  // daily total across all locations
+
   let sum2 = 0;
   for (let i=0; i<locations.length; i++) {
     sum2 += locations[i].totalCookiesSold;
@@ -110,9 +117,12 @@ function createTableFooter () {
   tableRow2.appendChild(dailyTotal);
 }
 
-createTableFooter();
+footer ();
 
-function inputNewStore(){
+// input location
+
+function input() {
+
   let form = document.getElementById('form');
   form.addEventListener('submit',addStore);
   function addStore(event) {
@@ -123,10 +133,10 @@ function inputNewStore(){
     let maxCust = form.maxCust.value;
     let avgSale = form.avgSale.value;
     let newStore = new Locations(city, minCust, maxCust, avgSale);
-    console.log(newStore);
     newStore.render();
+    locations.push(newStore);
+    footer();
   }
 }
 
-inputNewStore();
-
+input();
