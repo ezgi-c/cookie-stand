@@ -9,7 +9,7 @@ function header () {
   tableHead.appendChild(tableRow);
 
   let tableHeader0 = document.createElement('th');
-  tableHeader0.innerText = 'Cities';
+  tableHeader0.innerText = 'Store';
   tableRow.appendChild(tableHeader0);
 
   for (let i=0; i<hours.length; i++) {
@@ -128,11 +128,7 @@ function input() {
   function addStore(event) {
     event.preventDefault();
     let form = event.target;
-    let city = form.city.value;
-    let minCust = form.minCust.value;
-    let maxCust = form.maxCust.value;
-    let avgSale = form.avgSale.value;
-    let newStore = new Locations(city, minCust, maxCust, avgSale);
+    let newStore = new Locations(form.city.value, form.minCust.value, form.maxCust.value, form.avgSale.value);
     newStore.render();
     locations.push(newStore);
     footer();
