@@ -128,7 +128,11 @@ function input() {
   function addStore(event) {
     event.preventDefault();
     let form = event.target;
-    let newStore = new Locations(form.city.value, form.minCust.value, form.maxCust.value, form.avgSale.value);
+    let city = form.city.value;
+    let minCust = Number(form.minCust.value);
+    let maxCust = Number(form.maxCust.value);
+    let avgSale = Number(form.avgSale.value);
+    let newStore = new Locations(city, minCust, maxCust, avgSale);
     newStore.render();
     locations.push(newStore);
     footer();
